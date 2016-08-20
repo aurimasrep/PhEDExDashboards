@@ -1,12 +1,12 @@
-## Hadoop dashboard
+## PhEDEx dashboard
 
-This a test project: a web application that will allow Hadoop admins to create
-ad-hoc dashboard for users and services.
+A web application that will allow to monitor PhEDEx block replica status in variuos ways.
 
 ## Requirements 
 
 Install
 
+* node
 * npm
 
 ## Instructions
@@ -14,7 +14,7 @@ Install
 Use nodejs to start your web app:
 
 ```bash
-cd yarn-monitoring
+cd BlockReplicaMonitoring
 npm install express
 npm install
 node ./bin/www
@@ -32,26 +32,24 @@ for instance:
 cat process.yml
 
 #apps:
-#  - name   : yarn-monitoring
-#    script : ./yarn-monitoring/./bin/www
+#  - name   : BlockReplicaMonitoring
+#    script : ./BlockReplicaMonitoring/./bin/www
 #    watch  : true
 #    env    :
 #      NODE_ENV: development
-#      ANALYTIX_NAMENODE: p01001532965510.cern.ch
-#      PORT: 8088
+#      PORT: 8880
 #    env_production:
 #      NODE_ENV: production
-#      PORT: 8088
-#    exec_mode: cluster
-#    cwd: ./yarn-monitoring
+#      PORT: 8880
+#    cwd: ./BlockReplicaMonitoring
 
-pm2 start process.yml --only yarn-monitoring
+pm2 start process.yml --only BlockReplicaMonitoring
 
-#[PM2] [yarn-monitoring](0) ✓
-#┌─────────────────┬────┬─────────┬──────┬────────┬─────────┬────────┬────────────┬──────────┐
-#│ App name        │ id │ mode    │ pid  │ status │ restart │ uptime │ memory     │ watching │
-#├─────────────────┼────┼─────────┼──────┼────────┼─────────┼────────┼────────────┼──────────┤
-#│ yarn-monitoring │ 0  │ cluster │ 2996 │ online │ 251     │ 0s     │ 9.313 MB   │  enabled │
-#└─────────────────┴────┴─────────┴──────┴────────┴─────────┴────────┴────────────┴──────────┘
+#[PM2] [BlockReplicaMonitoring](0) ✓
+#┌────────────────────────┬────┬─────────┬──────┬────────┬─────────┬────────┬────────────┬──────────┐
+#│ App name               │ id │ mode    │ pid  │ status │ restart │ uptime │ memory     │ watching │
+#├────────────────────────┼────┼─────────┼──────┼────────┼─────────┼────────┼────────────┼──────────┤
+#│ BlockReplicaMonitoring │ 0  │ fork    │ 2996 │ online │ 251     │ 0s     │ 9.313 MB   │  enabled │
+#└────────────────────────┴────┴─────────┴──────┴────────┴─────────┴────────┴────────────┴──────────┘
 
 ```
