@@ -1,0 +1,12 @@
+apps:
+
+  - name   : BlockReplicaMonitoring
+    script : ./BlockReplicaMonitoring/./bin/www
+    watch  : true
+    env    :
+      NODE_ENV: development
+      PORT: 8880
+    env_production:
+      NODE_ENV: production
+      PORT: 8880
+    cwd: ./BlockReplicaMonitoring
