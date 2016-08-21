@@ -1,0 +1,9 @@
+extends ./layout.jade
+
+block content
+    section#CMS_BR
+        h2.sub-header= "CMS - Block Replica Monitoring"
+        div.row.placeholders
+            div#cms-br-size.row.placeholder
+                div.progress
+                    div.progress-bar.progress-bar-stripped.active(role="progressbar", aria-valuenow="100" area-valuemin="0", arie-valuemax="100", style="width: 100%")

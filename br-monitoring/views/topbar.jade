@@ -1,0 +1,13 @@
+nav.navbar.navbar-inverse.navbar-fixed-top
+    div.container-fluid
+        div.navbar-header
+            button.navbar-toggle.collapsed(data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+                span.sr-only= "Toggle navigation"
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href="#")= "PhEDEx data monitoring"
+        div#navbar.navbar-collapse.collapse
+            ul.nav.navbar-nav.navbar-right
+                li: a(href="/")= "Overview"
+                li: a(href="br-monitoring")= "Block Replicas"

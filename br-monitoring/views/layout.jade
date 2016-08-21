@@ -1,7 +1,24 @@
 doctype html
-html
+html(lang="en")
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset="utf-8")
+    meta(http-equic="X-UA-Compatible", content="IE-edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="Web page for PhEDEx data monitoring")
+    meta(name="author", content="Aurimas")
+    title= "PhEDEx data monitoring"
+    link(href="/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/css/dashboard.css", rel="stylesheet")
   body
-    block content
+    include topbar
+    include sidebar                       
+    div.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+        block content
+    include footer
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/d3.min.js")
+    script(src="/js/d3-queue.min.js")
+    script(src="/js/plotly.min.js")
+    script(src="/js/br-monitoring/cms-jm.js")
+    script(src="/js/br-monitoring/cms-jm-datapop.js")

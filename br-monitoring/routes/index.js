@@ -7,12 +7,12 @@ var views = __dirname + '/../views/';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.sendFile(path.resolve(views+'/index.html'));
+    res.render('index', {currentUrl: req.originalUrl});
 });
 
 /* GET ETL procedures list. */
-router.get('/etl-procedures', function(req, res, next) {
-    res.sendFile(path.resolve(views+'/BlockReplicaMonitoring.html'));
+router.get('/br-monitoring', function(req, res, next) {
+    res.render('br-monitoring', {currentUrl: req.originalUrl});
 });
 
 module.exports = router;
