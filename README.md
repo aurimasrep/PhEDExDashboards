@@ -14,7 +14,7 @@ Install
 Use nodejs to start your web app:
 
 ```bash
-cd BlockReplicaMonitoring
+cd br-monitoring 
 npm install express
 npm install
 node ./bin/www
@@ -32,8 +32,8 @@ for instance:
 cat process.yml
 
 #apps:
-#  - name   : BlockReplicaMonitoring
-#    script : ./BlockReplicaMonitoring/./bin/www
+#  - name   : br-monitoring
+#    script : ./br-monitoring/./bin/www
 #    watch  : true
 #    env    :
 #      NODE_ENV: development
@@ -41,15 +41,15 @@ cat process.yml
 #    env_production:
 #      NODE_ENV: production
 #      PORT: 8880
-#    cwd: ./BlockReplicaMonitoring
+#    cwd: ./br-monitoring
 
-pm2 start process.yml --only BlockReplicaMonitoring
+pm2 start process.yml --only br-monitoring
 
-#[PM2] [BlockReplicaMonitoring](0) ✓
-#┌────────────────────────┬────┬─────────┬──────┬────────┬─────────┬────────┬────────────┬──────────┐
-#│ App name               │ id │ mode    │ pid  │ status │ restart │ uptime │ memory     │ watching │
-#├────────────────────────┼────┼─────────┼──────┼────────┼─────────┼────────┼────────────┼──────────┤
-#│ BlockReplicaMonitoring │ 0  │ fork    │ 2996 │ online │ 251     │ 0s     │ 9.313 MB   │  enabled │
-#└────────────────────────┴────┴─────────┴──────┴────────┴─────────┴────────┴────────────┴──────────┘
+#[PM2] [br-monitoring](0) ✓
+#┌───────────────┬────┬──────┬──────┬────────┬─────────┬────────┬────────────┬──────────┐
+#│ App name      │ id │ mode │ pid  │ status │ restart │ uptime │ memory     │ watching │
+#├───────────────┼────┼──────┼──────┼────────┼─────────┼────────┼────────────┼──────────┤
+#│ br-monitoring │ 0  │ fork │ 2996 │ online │ 251     │ 0s     │ 9.313 MB   │  enabled │
+#└───────────────┴────┴──────┴──────┴────────┴─────────┴────────┴────────────┴──────────┘
 
 ```
