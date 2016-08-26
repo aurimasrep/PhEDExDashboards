@@ -85,7 +85,7 @@ var d3CMS_BR_1LoadChart = function(callback) {
 }
 
  var d3CMS_BR_2LoadChart = function(callback) {
-     d3.json('/spark-result', function(err, data) {
+     d3.json('/cms-br-2', function(err, data) {
 
     data = _.filter(data, (row) => row.br_user_group == "DataOps")
     data = _.filter(data, (row) => row.node_kind == "Disk")
@@ -138,7 +138,7 @@ var d3CMS_BR_1LoadChart = function(callback) {
             },
             showarrow: false,
             text: 'DB',
-            x: 0.17,
+             x: 0.23, 
              y: 0.5
         },
         {
@@ -147,12 +147,9 @@ var d3CMS_BR_1LoadChart = function(callback) {
             },
             showarrow: false,
             text: 'NB',
-            x: 0.82,
+            x: 0.77,
             y: 0.5
         }],
-
-        height: 600,
-        width: 600
     };
  
     // Plotly.newPlot('chart1', data, layout);
@@ -214,6 +211,8 @@ function readMultiCsv(paths){
 //var fileList = ["/cms-br-2", "/cms-br-2"]
 
 //readMultiCsv(fileList)
+
+
 
 var q = d3.queue();
 q.defer(d3CMS_BR_1LoadChart);

@@ -17,4 +17,4 @@ form#form-filter.form-inline(method="post")
         select.selectpicker(name="node", multiple, required)
             each val, key in resultFields
                 option(value= key)= val
-    button.btn.btn-primary.pull-right(type= "submit")= "Submit request"
+    button.btn.btn-primary.pull-right(type= "submit", disabled)= "Submit request"

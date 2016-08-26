@@ -4,7 +4,7 @@ var path = require('path');
 var moment= require('moment');
 var brsum = require('../controllers/br-sum');
 //var sparkHandler = require('../controllers/spark-handler');
-//var hdfsReader = require('../controllers/hdfs-reader')
+var hdfsReader = require('../controllers/webhdfs-client')
 
 // we are inside ./routes/
 var views = __dirname + '/../views/';
@@ -38,5 +38,12 @@ router.get('/cms-br-1', function(req, res, next) {
 //router.get('/spark-result', function(req, res, next) {
 //    res.send(sparkhandler.collect('a'));
 //});
+
+router.get('/hdfs-result', function(req, res, next) {
+    //debugger;
+    //hdfsReader.readFile(res, function(res, data){ res.sendFile(data); })
+    //debugger;
+     //res.sendFile(hdfsReader.readFile());
+});
 
 module.exports = router;

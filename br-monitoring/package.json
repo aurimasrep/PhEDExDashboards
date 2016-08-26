@@ -23,6 +23,6 @@
     "underscore": "latest",
     "webhdfs": "latest",
     "bootstrap-select": "latest",
-    "eclairjs": "latest" 
+    "eclairjs": "latest"
   }
 }
