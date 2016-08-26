@@ -1,0 +1,20 @@
+form#form-filter.form-inline(method="post")
+    div.form-group
+        label= "Time interval"
+        input#daterange.btn.btn-default(type="text", value= now + " - " + now, readonly, required)
+    div.form-group
+        label= "Node kind"
+        select.selectpicker(name="node", multiple, required)
+            each val, key in nodeKinds
+                option(value= key)= val    
+    div.form-group
+        label= "User group"
+        select.selectpicker(name="user", data-actions-box="true", data-live-search="true", multiple, required)
+            each val in userGroups
+                option(value= val)= val
+    div.form-group
+        label= "Results"
+        select.selectpicker(name="node", multiple, required)
+            each val, key in resultFields
+                option(value= key)= val
+    button.btn.btn-primary.pull-right(type= "submit")= "Submit request"

@@ -4,9 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
-
 var app = express();
 
 // view engine setup
@@ -30,16 +28,21 @@ app.use('/js', express.static(__dirname + '/node_modules/d3/build')); // redirec
 app.use('/js', express.static(__dirname + '/node_modules/d3-queue/build'));
 app.use('/js', express.static(__dirname + '/node_modules/plotly.js/dist'));
 app.use('/js', express.static(__dirname + '/public/javascripts/'));
+app.use('/js', express.static(__dirname + '/node_modules/daterangepicker'));
+app.use('/js', express.static(__dirname + '/node_modules/moment'));
+app.use('/js', express.static(__dirname + '/node_modules/underscore'));
+app.use('/js', express.static(__dirname + '/node_modules/webhdfs/lib'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap-select/dist/js'));
 
 app.use('/css', express.static(__dirname + '/public/stylesheets/'));
-app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css')); // redirect CSS bootstrap
-
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));// redirect CSS bootstrap
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap-select/dist/css'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
 });
 
 // error handlers
@@ -47,24 +50,23 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
     });
-  });
 }
 
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
 });
-
 
 module.exports = app;

@@ -1,6 +1,31 @@
-extends ./layout.jade
+extends ./base/layout.jade
 
 block content
     div.alert.alert-warning(role="alert")
         b= "Alert! " 
         | This dashboard is under construction! Please be patient!
+    div.table-responsive
+        table.table.table-striped
+            thead
+                tr
+                    th= "Identification"
+                    th= "Aggregation"
+                    th= "Keys"
+                    th= "Fields"
+                    th= "Status"
+                    th= "Contacts"
+            tbody
+                tr
+                    td= "CMS-BR-1"
+                    td= "Delta"
+                    td= "Node Name"
+                    td= "Delta Plus, Delta Minus"
+                    td: span.label.label-default= "Coming Soon"
+                    td= "A. Repecka"
+                tr
+                    td= "CMS-BR-2"
+                    td= "Sum"
+                    td= "Now, User Group, Data Tier, Acquisition Era, Node Kind"
+                    td= "Destination Bytes, Node Bytes"
+                    td: span.label.label-default= "Coming Soon"
+                    td= "A. Repecka"

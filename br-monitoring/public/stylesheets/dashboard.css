@@ -145,3 +145,21 @@ section {
   border: 1px solid #ddd;
   margin-bottom: 20px;
 }
+
+.form-group > label {
+    margin-right: 10px;
+}
+
+.form-group {
+    margin-right: 25px;
+}
+
+#form-filter {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+#daterange {
+    border-radius: 5px;
+}

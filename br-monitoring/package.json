@@ -17,6 +17,12 @@
     "jquery": "latest",
     "d3":"latest",
     "plotly.js":"1.10.0",
-    "d3-queue": "latest"
+    "d3-queue": "latest",
+    "moment": "latest",
+    "daterangepicker": "latest",
+    "underscore": "latest",
+    "webhdfs": "latest",
+    "bootstrap-select": "latest",
+    "eclairjs": "latest" 
   }
 }
