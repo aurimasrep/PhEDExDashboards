@@ -1,0 +1,18 @@
+extends ./base/layout.jade
+
+block content
+    h2.sub-header= now + " Block Replica Sum"
+    div.container-fluid
+        div.row.placeholders
+            div.col-sm-8
+                div#cms-br-sum-week.placeholder
+            div.col-sm-4
+                div#br-sum-current-node_kind.placeholder
+            div.col-sm-4
+                div#br-sum-current-br_user_group.placeholder
+            div.col-sm-4
+                div#br-sum-current-acquisition_era.placeholder
+            div.col-sm-4
+                div#br-sum-current-data_tier.placeholder
+                span.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
+

@@ -1,6 +1,10 @@
 div.container-fluid
     div.row
-        div.col-sm-3.col-md-2.sidebar
-            ul.nav.nav-sidebar
+        div.col-sm-3.col-md-2.sidebar        
+            ul#MainMenu.nav.nav-sidebar
                 li(class={active: currentUrl === '/'}): a(href="/")= "Overview"
-                li(class={active: currentUrl === '/br-sum'}): a(href="br-sum")= "Block Replicas Sum"
+                li
+                    a(href="#br-sum", data-toggle="collapse", data-parent="#MainMenu")= "Block Replicas Sum"    
+                    ul#br-sum.nav.nav-sidebar(class=  collapseBrSum ? "collapse" : "collapse in")
+                        li(class={active: currentUrl === '/br-sum-current'}): a(href="br-sum-current")= "Current"
+                        li(class={active: currentUrl === '/br-sum-filter'}): a(href="br-sum-filter")= "Filter"

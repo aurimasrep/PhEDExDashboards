@@ -21,8 +21,6 @@
     "moment": "latest",
     "daterangepicker": "latest",
     "underscore": "latest",
-    "webhdfs": "latest",
-    "bootstrap-select": "latest",
-    "eclairjs": "latest"
+    "bootstrap-select": "latest"
   }
 }

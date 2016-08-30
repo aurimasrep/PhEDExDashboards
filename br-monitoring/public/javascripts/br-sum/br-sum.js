@@ -87,10 +87,15 @@ var d3CMS_BR_1LoadChart = function(callback) {
  var d3CMS_BR_2LoadChart = function(callback) {
      d3.json('/cms-br-2', function(err, data) {
 
+    //1. Get data
+    
+    //2. Flter data
     data = _.filter(data, (row) => row.br_user_group == "DataOps")
     data = _.filter(data, (row) => row.node_kind == "Disk")
     data = _.filter(data, (row) => row.data_tier == "RECO")
 
+    //3. Define traces
+    
     var trace1 =
      {
         labels: data.map((row) => row.acquisition_era),
@@ -129,6 +134,7 @@ var d3CMS_BR_1LoadChart = function(callback) {
  
     var data = [trace1, trace2]
  
+    //4. Define layout
     var layout = {
         title: titleCMS_BR_2,
         annotations: [
@@ -152,7 +158,10 @@ var d3CMS_BR_1LoadChart = function(callback) {
         }],
     };
  
-    // Plotly.newPlot('chart1', data, layout);
+    //5. Insert html element
+    
+    var plotID = nodeKind + "-" + userGroup + "-" + resultField;
+
     $("#"+idPlotCMS_BR_2+" div").remove(".progress")
 
     var d3 = Plotly.d3;
@@ -161,9 +170,7 @@ var d3CMS_BR_1LoadChart = function(callback) {
     var dataPopChart = gd3.node();
     Plotly.plot(dataPopChart, data, layout);
 
-    // window.onresize = function() { Plotly.Plots.resize( dataPopChart ); };
-    window.addEventListener('resize', function() { Plotly.Plots.resize(dataPopChart); 
-    });
+    window.addEventListener('resize', function() { Plotly.Plots.resize(dataPopChart);});
  
     callback(err, null);
  
@@ -194,6 +201,10 @@ $(document).ready(function() {
            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
         }
     });
+});
+
+$("#form-filter").submit(function(ev) {
+    return;
 });
 
 function csv(path, callback){

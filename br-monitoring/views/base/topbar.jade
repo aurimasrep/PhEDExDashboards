@@ -10,4 +10,9 @@ nav.navbar.navbar-inverse.navbar-fixed-top
         div#navbar.navbar-collapse.collapse
             ul.nav.navbar-nav.navbar-right
                 li: a(href="/")= "Overview"
-                li: a(href="/br-sum")= "Block Replicas Sum"
+                li.dropdown
+                    a.dropdown-toggle(href= "#", data-toggle= "dropdown")= "Block Replicas Sum"
+                        b.caret
+                    ul.dropdown-menu
+                        li(class={active: currentUrl === '/br-sum-current'}): a(href="br-sum-current")= "Current"
+                        li(class={active: currentUrl === '/br-sum-filter'}): a(href="br-sum-filter")= "Filter"

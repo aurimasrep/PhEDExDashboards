@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
+var routesSumCurrent = require('./routes/br-sum-current');
+var routesSumFilter = require('./routes/br-sum-filter');
 var app = express();
 
 // view engine setup
@@ -20,6 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/br-sum-current', routesSumCurrent);
+app.use('/br-sum-filter', routesSumFilter);
 
 // setup JS+CSS dependencies
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
