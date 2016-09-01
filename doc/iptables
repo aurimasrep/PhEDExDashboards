@@ -1,0 +1,78 @@
+Chain INPUT (policy ACCEPT)
+target     prot opt source               destination         
+ACCEPT     all  --  anywhere             anywhere            /* 000 allow packets with valid state */ state RELATED,ESTABLISHED 
+ACCEPT     icmp --  anywhere             anywhere            /* 001 allow icmp */ 
+ACCEPT     all  --  anywhere             anywhere            /* 002 allow all to lo interface */ 
+ACCEPT     tcp  --  anywhere             anywhere            multiport dports arc /* 100 allow access to the 4241 for arcd control. */ state NEW 
+ACCEPT     udp  --  anywhere             anywhere            multiport dports afs3-callback /* 100 allow afs3-callback */ state NEW 
+ACCEPT     udp  --  ip-dns-1.cern.ch     anywhere            multiport sports domain /* 100 allow ip-dns-1 call backs */ 
+ACCEPT     udp  --  ip-dns-2.cern.ch     anywhere            multiport sports domain /* 100 allow ip-dns-2 call backs */ 
+ACCEPT     tcp  --  anywhere             anywhere            multiport dports ssh /* 100 allow ssh */ state NEW 
+ACCEPT     all  --  lxfssm4307.cern.ch   anywhere            /* 150 accept connections from hadoop node 10.32.21.151 */ 
+ACCEPT     all  --  lxfssm4103.cern.ch   anywhere            /* 150 accept connections from hadoop node 10.32.21.24 */ 
+ACCEPT     all  --  p05153074955062.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.22.246 */ 
+ACCEPT     all  --  lxfsrb49a03.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.105 */ 
+ACCEPT     all  --  lxfsrb49a08.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.110 */ 
+ACCEPT     all  --  lxfsrb47a08.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.125 */ 
+ACCEPT     all  --  lxfsrb53a02.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.164 */ 
+ACCEPT     all  --  lxfsrb53a01.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.166 */ 
+ACCEPT     all  --  lxfsrb65a02.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.199 */ 
+ACCEPT     all  --  lxfsrb65a05.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.203 */ 
+ACCEPT     all  --  lxfsrb61a05.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.216 */ 
+ACCEPT     all  --  lxfsrb63a07.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.222 */ 
+ACCEPT     all  --  lxfsrb61a07.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.226.237 */ 
+ACCEPT     all  --  p05151113550320.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.106 */ 
+ACCEPT     all  --  p05151113568970.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.108 */ 
+ACCEPT     all  --  p05151113229047.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.113 */ 
+ACCEPT     all  --  p05151113589617.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.119 */ 
+ACCEPT     all  --  p05151113289750.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.167 */ 
+ACCEPT     all  --  p05151113923850.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.170 */ 
+ACCEPT     all  --  p05151113588139.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.174 */ 
+ACCEPT     all  --  p05151113997207.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.184 */ 
+ACCEPT     all  --  p05151113628212.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.185 */ 
+ACCEPT     all  --  p05151113253107.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.186 */ 
+ACCEPT     all  --  p05151113459597.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.197 */ 
+ACCEPT     all  --  p05151113731852.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.199 */ 
+ACCEPT     all  --  p05151113794678.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.200 */ 
+ACCEPT     all  --  p05151113126469.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.201 */ 
+ACCEPT     all  --  p05151113130191.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.203 */ 
+ACCEPT     all  --  p05151113142551.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.204 */ 
+ACCEPT     all  --  p05151113469665.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.228 */ 
+ACCEPT     all  --  p05151113454475.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.238 */ 
+ACCEPT     all  --  p05151113248710.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.24 */ 
+ACCEPT     all  --  p05151113452631.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.242 */ 
+ACCEPT     all  --  p05151113416949.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.23.4 */ 
+ACCEPT     all  --  p05153074874554.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.104 */ 
+ACCEPT     all  --  p05153074789266.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.105 */ 
+ACCEPT     all  --  p05153074735571.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.111 */ 
+ACCEPT     all  --  p05153074211773.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.141 */ 
+ACCEPT     all  --  p05153074207230.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.143 */ 
+ACCEPT     all  --  p05153074312553.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.148 */ 
+ACCEPT     all  --  p05153074636644.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.171 */ 
+ACCEPT     all  --  p05153074654192.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.177 */ 
+ACCEPT     all  --  p05153074185750.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.19 */ 
+ACCEPT     all  --  p05153074063755.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.37 */ 
+ACCEPT     all  --  p05153074949355.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.40 */ 
+ACCEPT     all  --  p05153074033994.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.46 */ 
+ACCEPT     all  --  p05153074971531.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.48 */ 
+ACCEPT     all  --  p05153074211655.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.52 */ 
+ACCEPT     all  --  p05153074925396.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.55 */ 
+ACCEPT     all  --  p05153074630765.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.24.87 */ 
+ACCEPT     all  --  p01001532975913.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.36.219 */ 
+ACCEPT     all  --  p01001532965510.cern.ch  anywhere            /* 150 accept connections from hadoop node 128.142.36.226 */ 
+REJECT     igmp --  anywhere             anywhere            /* 995 deny all igmp packets */ reject-with icmp-port-unreachable 
+REJECT     udp  --  188.184.20.22        anywhere            multiport ports rusb-sys-port /* 995 deny annoying microsoft broadcasts */ reject-with icmp-port-unreachable 
+REJECT     udp  --  anywhere             anywhere            multiport ports bootps,bootpc,netbios-ns,netbios-dgm /* 995 deny bootps,bootpc,netbios-dgm requests */ reject-with icmp-port-unreachable 
+DROP       all  --  anywhere             anywhere            PKTTYPE = broadcast /* 995 drop and do not log any other broadcasts */ 
+LOG        all  --  anywhere             anywhere            /* 998 log all dropped packets left at end */ limit: avg 3/min burst 5 LOG level warning prefix `iptables: [DENIED] ' 
+ACCEPT     tcp  --  anywhere             cms-phedex-plots.cern.ch tcp dpt:cddbp-alt 
+REJECT     all  --  anywhere             anywhere            /* 999 deny everything else */ reject-with icmp-port-unreachable 
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+REJECT     tcp  --  anywhere             anywhere            /* 999 reject remaining forwarding */ reject-with icmp-port-unreachable 
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
+REJECT     tcp  --  anywhere             anywhere            multiport dports oob-ws-http /* 150 - reject outbound ipmi tcp */ state NEW reject-with icmp-port-unreachable 
+REJECT     udp  --  anywhere             anywhere            multiport dports oob-ws-http /* 150 - reject outbound ipmi udp */ state NEW reject-with icmp-port-unreachable

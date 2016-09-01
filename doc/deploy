@@ -1,0 +1,42 @@
+Prerequisities:
+1)GCC 4.2 or newer
+    1.1)sudo yum install gcc.x86_64
+    1.2)sudo yum install gcc-c++.x86_64
+2)GNU make 3.81 or newer. Pre-installed on most systems.
+3)Python 2.6 or 2.7. Pre-installed on most unix-based systems.
+4)Git.
+
+Node installation:
+1)ver=0.10.46
+2)wget -c https://nodejs.org/dist/v$ver/node-v$ver.tar.gz
+3)tar -xzf node-v$ver.tar.gz
+4)cd node-v$ver
+5)./configure --prefix=~/local--> Replace this with suitable location
+6)make
+7)make install
+8)echo 'export PATH=~/local/bin:${PATH}' >> ~/.bashrc
+
+Npm configuration* **:
+1)loc=~/.npm-global --> Replace this with suitable location
+2)npm config set prefix $loc
+3)echo 'export PATH='$loc'/bin:${PATH}' >> ~/.bashrc
+*Npm is node package manager dedicated for installing packages. By default npm installs packages locally within app/node_modules directory. Nevertheless, some packages must be installed globally. 
+**We need configure npm to install global packages in the place that it would have access of (It will be only pm2. Other packages will be installed locally).
+
+App installations:
+1)git clone https://github.com/aurimasrep/PhEDExDashboards.git
+2)cd PhEDExDashboards/br-monitoring/
+3)npm install pm2 -g
+3)npm install express
+4)npm instal
+
+Firewall restrictions:
+1)Set port for nodejs app. (vim ../process.yml)
+2)iptables -I INPUT 66 -p tcp -d 128.142.137.188 --dport 8880 -j ACCEPT
+//Replace ip address(128.142.137.188) and port(8880) with specific on machines running (port should be also changed in application_dir/process.yml)
+//Replace line number(66) with specific one (see iptables file: last INPUT rule was denying connections)
+//Depending on iptables on specif machine it might be necessary to add an output rule
+
+Launching node application;
+1)
+
