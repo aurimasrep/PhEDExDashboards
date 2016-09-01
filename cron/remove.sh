@@ -1,4 +1,6 @@
 filename=`date +%Y-%m-%d -d "3 months ago"`
-outputdir=out
+outputdir=/afs/cern.ch/user/a/arepecka/public/CrontabTest/out
 
-rm $outputdir/$filename
+if [ -f $outputdir/$filename ]; then
+    rm $outputdir/$filename
+fi
