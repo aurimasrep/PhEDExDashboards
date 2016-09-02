@@ -1,0 +1,12 @@
+# $1 - Project directory
+# $2 - Source hdfs directory (default should be: /cms/phedex-monitoring)
+# $3 - Output fs directory
+# $4 - number (in months) how long records should be kept (default should be: 3)
+## Time should be set corresponding to another cron job that acquires neccessary files 
+## Assumption was made that acquisition script runs at midnight, so this crontab set at 1AM
+
+
+# Collecting web files from hdfs (PhedexDashboards)
+0 1 * * * $1/cron/collect.sh $2 $3
+# Cleaning local area (PhedexDashboards)
+0 1 * * * $1/cron/remove.sh $3 $4
