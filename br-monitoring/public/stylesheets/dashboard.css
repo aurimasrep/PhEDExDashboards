@@ -71,18 +71,7 @@ body {
 #br-sum  {
     margin-left: 20px;
 }
-
-
-.placeholder{
-    background-color: #90EE90;
-    border-radius: 20px;
-    height: 229px;
-    margin: 10px;
-    padding-top: 90px;
-    font-size: 2.592em;
-    text-align: center;
-}
-    
+  
 .glyphicon-refresh-animate {
     -animation: spin .7s infinite linear;
     -ms-animation: spin .7s infinite linear;
@@ -147,17 +136,6 @@ span.glyphicon-refresh {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
-}
-
-/*
- * zeppelin progress bar
- */
-
-.progress {
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 20px
 }
 
 /*

@@ -37,6 +37,10 @@ Firewall restrictions:
 //Replace line number(66) with specific one (see iptables file: last INPUT rule was denying connections)
 //Depending on iptables on specif machine it might be necessary to add an output rule
 
+Launching crontabs:
+1)Read PROJECT_DIR/cron/launch
+2)Add two crontabs for collecting and removing data
+
 Launching node application;
 1)
 

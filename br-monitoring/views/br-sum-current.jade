@@ -1,18 +1,22 @@
 extends ./base/layout.jade
 
 block content
-    h2.sub-header= now + " Block Replica Sum"
+    h2.sub-header= current + " Block Replica Sum"
     div.container-fluid
         div.row.placeholders
             div.col-sm-8
-                div#cms-br-sum-week.placeholder
+                div#cms_br_sum-week.placeholder
+                span#cms_br_sum-week-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
             div.col-sm-4
-                div#br-sum-current-node_kind.placeholder
+                div#br_sum_current-node_kind.placeholder
+                span#br_sum_current-node_kind-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
             div.col-sm-4
-                div#br-sum-current-br_user_group.placeholder
+                div#br_sum_current-br_user_group.placeholder
+                span#br_sum_current-br_user_group-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
             div.col-sm-4
-                div#br-sum-current-acquisition_era.placeholder
+                div#br_sum_current-acquisition_era.placeholder
+                span#br_sum_current-acquisition_era-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
             div.col-sm-4
-                div#br-sum-current-data_tier.placeholder
-                span.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
+                div#br_sum_current-data_tier.placeholder
+                span#br_sum_current-data_tier-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
 
