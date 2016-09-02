@@ -1,6 +1,12 @@
-filename=`date +%Y-%m-%d -d "3 months ago"`
-outputdir=/afs/cern.ch/user/a/arepecka/public/CrontabTest/out
+#!/bin/sh
+# Author: Aurimas Repecka <aurimas.repecka AT gmail [DOT] com>
+# A wrapper script to remove phedex replica monitoring data from fs
+# Parameters:
+## $1 - output directory in fs
+## $2 - number (in months) how long data should be kept (default should be: 3)
 
-if [ -f $outputdir/$filename ]; then
-    rm $outputdir/$filename
+filename=`date +%Y-%m-%d -d "${2} months ago"`
+
+if [ -f $1/$filename ]; then
+    rm $1/$filename
 fi

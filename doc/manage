@@ -52,7 +52,7 @@ sysboot()
 # Start the service.
 start()
 {
-  cd $PHEDEXDASHBOARDS_ROOT.
+  cd $PHEDEXDASHBOARDS_ROOT
   echo "starting $ME"
   pm2 start ./process.yml
 }
