@@ -5,6 +5,10 @@
 ## $1 - source directory in hdfs (default should be /cms/phedex-monitoring)
 ## $2 - output directory in fs
 
+export KEYTAB=/data/arepecka.keytab
+principal=`klist -k $KEYTAB | tail -1 | awk '{print $2}'`
+kinit $principal -k -t $KEYTAB
+
 now=$(date +'%Y-%m-%d')
 filename=`date +%Y-%m-%d -d "yesterday"`
 headers=now,br_user_group,data_tier,acquisition_era,node_kind,br_dest_bytes,br_node_bytes
