@@ -5,8 +5,16 @@
 - Pbr.py script produces many logs in execution mode. Added different log level support for this issue.
 ```
 # In the script execution parameter might be added
-# Possible parameter values: 
-
+# Possible parameter values: ALL, DEBUG, ERROR, FATAL, INFO, OFF, TRACE, WARN
+--logs INFO
+```
+- Added option pbr.py to collect results into one node and save it as json (--collect).
+```
+aggres = aggres.toJSON().collect()
+with open(fout_header, 'w+') as f:
+    f.write('[')
+    f.write(",".join(aggres))
+    f.write(']')
 ```
 - Tested different approaches to get data from hdfs to local file system:
   - WebHdfs npm package. Ability to get data from hdfs using http requests. Problem: not working with kerberos authentication.
