@@ -37,6 +37,21 @@ Firewall restrictions:
 //Replace line number(66) with specific one (see iptables file: last INPUT rule was denying connections)
 //Depending on iptables on specif machine it might be necessary to add an output rule
 
+Getting kerberos keytab for crontabs that are using hdfs:
+1)cd /YOUR_AREA
+2)ktutil
+ktutil:  addent -password -p username@CERN.CH -k 1 -e rc4-hmac
+Password for username@CERN.CH:
+ktutil:  addent -password -p username@CERN.CH -k 1 -e aes256-cts
+Password for username@CERN.CH:
+ktutil:  wkt username.keytab
+ktutil:  quit
+3)chmod u+rw,g-rwx,g-rwx username.keytab
+4)Adding these lines in crontab scripts:
+export KEYTAB=/your_path/username.keytab
+principal=`klist -k $KEYTAB | tail -1 | awk '{print $2}'`
+kinit $principal -k -t $KEYTAB
+
 Launching crontabs:
 1)Read PROJECT_DIR/cron/launch
 2)Add two crontabs for collecting and removing data
