@@ -57,4 +57,4 @@ Launching crontabs:
 2)Add two crontabs for collecting and removing data
 
 Launching node application;
-1)pm2 start process.yml
+1)pm2 start PROJECT_DIR/process.yml
