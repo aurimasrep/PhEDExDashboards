@@ -14,4 +14,4 @@ pm2 stop process.yml
 ```
 ## Usage
 - Connect to node app via browser (ip_address:port). Port should be specified in process.yml file.
-- In order to see user guide to node app, see: ./doc/instructions.
+- In order to see user guide to node app, see ./doc/instructions.
