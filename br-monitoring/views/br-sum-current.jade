@@ -1,22 +1,33 @@
 extends ./base/layout.jade
 
 block content
-    h2.sub-header= current + " Block Replica Sum"
+    h2.sub-header= "Block Replica Sum (current)"
     div.container-fluid
+        div#br-sum-filter.row
+            div.col-md-5.col-sm-12.col-xs-12
+                div#tab-key.btn-group
+                    button.btn.btn-large.btn-default.active(value= "node_kind")= "Node Kind"
+                    button.btn.btn-large.btn-default(value= "br_user_group")= "User group"
+                    button.btn.btn-large.btn-default(value= "acquisition_era")= "Acquisition Era"
+                    button.btn.btn-large.btn-default(value= "data_tier")= "Data Tier"
+            div.col-md-4.col-sm-6.col-xs-12
+                div#tab-result.btn-group
+                    button.btn.btn-large.btn-default.active(value= "br_node_bytes")= "Node Bytes"
+                    button.btn.btn-large.btn-default(value= "br_dest_bytes")= "Destination bytes"
+            div.col-md-2.col-sm-6.col-xs-6
+                div#traces-input.input-group
+                    input#limit.col-md-5.form-control(type= "number",value="10", min= "1", autocomplete= "off")
+                    span.input-group-btn
+                        button#limit-btn.btn.btn-default(type= "button")= "Limit"
+            div.col-md-1.col-sm-2.col-xs-2
+                div#json-file
+                    button#download-json.btn.btn-default(type= "button")= "JSON"
+                        a
+        hr
         div.row.placeholders
-            div.col-sm-8
-                div#cms_br_sum-week.placeholder
-                span#cms_br_sum-week-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
-            div.col-sm-4
-                div#br_sum_current-node_kind.placeholder
-                span#br_sum_current-node_kind-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
-            div.col-sm-4
-                div#br_sum_current-br_user_group.placeholder
-                span#br_sum_current-br_user_group-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
-            div.col-sm-4
-                div#br_sum_current-acquisition_era.placeholder
-                span#br_sum_current-acquisition_era-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
-            div.col-sm-4
-                div#br_sum_current-data_tier.placeholder
-                span#br_sum_current-data_tier-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
-
+            div.col-md-7
+                div#br-sum-bar.placeholder
+                span#br-sum-bar-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
+            div.col-md-5
+                div#br-sum-pie.placeholder
+                span#br-sum-pie-progress.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
