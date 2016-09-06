@@ -19,3 +19,5 @@
     - Added iptables rules for node and pm2 used ports
     - Problem is still not solved...
 - Improvements of webGUI
+  - Implemented several charts using static data.
+  - Loading multiple csv files
