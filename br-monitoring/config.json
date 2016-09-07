@@ -1,0 +1,8 @@
+{
+    "development": {
+        "data": "/data/cron/out"
+    },
+    "production": {
+        "data": "."
+    }
+}

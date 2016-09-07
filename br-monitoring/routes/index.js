@@ -21,7 +21,7 @@ router.get('/br-sum-current', function (req, res, next) {
 router.get('/br-sum-filter', function (req, res, next) {
     res.render('br-sum-filter', {currentUrl: req.originalUrl,
                                 collapseBrSum: false,
-                                current: moment().moment().add(-1, 'days').format("YYYY-MM-DD"),
+                                current: moment().add(-1, 'days').format("YYYY-MM-DD"),
                                 nodeKinds: brSumFilter.getNodeKinds(),
                                 userGroups: brSumFilter.getUserGroups(),
                                 resultFields: brSumFilter.getResultFields()

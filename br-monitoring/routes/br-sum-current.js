@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
+var envs = require('envs');
+var config=require('../config.json')[process.env.NODE_ENV || 'development'];
+
 
 // we are inside ./routes/
-var out = /*__dirname + */'/data/cron/out/'
+var out = config.data + '/';
 
 /* GET Block replicas monitorings sum current data. */
 router.get('/data/:fileName', function(req, res, next) {
