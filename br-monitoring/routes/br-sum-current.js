@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 var path = require('path');
-var envs = require('envs');
 var config=require('../config.json')[process.env.NODE_ENV || 'development'];
 
 

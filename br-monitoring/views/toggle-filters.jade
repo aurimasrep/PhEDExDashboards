@@ -1,0 +1,18 @@
+div#br-sum-filter.row
+    div.col-md-5.col-sm-12.col-xs-12
+        div#tab-key.tab-menu.btn-group
+            button.btn.btn-large.btn-default.active(type= "button", value= "node_kind", group="node")= "Node Kind"
+            button.btn.btn-large.btn-default(type= "button", value= "br_user_group", group="user")= "User group"
+            button.btn.btn-large.btn-default(type= "button", value= "acquisition_era", group="acquisition")= "Acquisition Era"
+            button.btn.btn-large.btn-default(type= "button", value= "data_tier", group= "data")= "Data Tier"
+    div.col-md-3.col-sm-6.col-xs-12
+        div#tab-result.tab-menu.btn-group
+            button.btn.btn-large.btn-default.active(type= "button", value= "br_node_bytes")= "Node Bytes"
+            button.btn.btn-large.btn-default(type= "button", value= "br_dest_bytes")= "Destination bytes"
+    div.col-md-2.col-sm-6.col-xs-12
+        div#tab-group.tab-menu.btn-group
+            button.btn.btn-large.btn-default.active(type= "button",  chart-group= "0")= "Charts 1"
+            button.btn.btn-large.btn-default(type= "button", chart-group= "1")= "Charts 2"
+    div.col-md-2.col-sm-6.col-xs-12
+        input#daterange.btn.btn-default.form-control(type="text", value= currentStart + " - " + currentEnd, readonly, required)
+hr

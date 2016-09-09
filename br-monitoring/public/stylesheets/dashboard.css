@@ -175,18 +175,21 @@ section {
  * Misc
  */
 
-.btn-group, #traces-input, #json-file {
+#br-sum-filter > div {
     margin-bottom: 10px;
     margin-top: 10px;
+}
+
+#br-sum-filter-2 > div {
+    margin-bottom: 10px;
 }
 
 #br-sum-bar-progress, #br-sum-pie-progress {
     margin-top: 50px;
 }
 
-
 .form-group > label {
-    margin-right: 10px;
+    height: 100%;
 }
 
 .form-group {
@@ -199,7 +202,7 @@ section {
     border-bottom: 1px solid #eee;
 }
 
-#daterange {
-    border-radius: 5px;
+#actions > div {
+    padding-left: 0px;
+    padding-right: 0px;
 }
-

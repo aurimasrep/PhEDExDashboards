@@ -1,0 +1,43 @@
+div#br-sum-filter-2.row
+    div.col-md-6.col-sm-6.col-xs-12
+        label.col-md-3.control-label(for="node-kind-sum")= "Node Kind"
+        div.col-md-9.input-group
+            select#node-kind-sum.selectpicker.form-control(name="node", multiple)
+                each val, key in nodeKinds
+                    option(value= key)= val            
+            span.input-group-btn
+                input.filters-on(type= "checkbox", group= "node")
+    div.col-md-6.col-sm-6.col-xs-12
+        label.col-md-3.control-label(for= "user-group-sum")= "User Group"
+        div.col-md-9.input-group
+            select#user-group-sum.selectpicker.form-control(name="user", data-actions-box="true", data-live-search="true", data-selected-text-format="count > 3", multiple)
+                each val in userGroups
+                    option(value= val)= val
+            span.input-group-btn
+                input.filters-on(type= "checkbox", group= "user")
+    div.col-md-6.col-sm-6.col-xs-12
+        label.col-md-3.control-label(for= "acquisition-era-sum")= "Acquisition Era"
+        div.col-md-9.input-group
+            input#acquisition-era-sum.form-control(type= "text")
+            span.input-group-btn
+                input.filters-on(type= "checkbox", group= "acquisition")
+    div.col-md-6.col-sm-6.col-xs-12
+        label.col-md-3.control-label(for= "data-tier-sum")= "Data Tier"
+        div.col-md-9.input-group
+            input#data-tier-sum.form-control(type= "text")
+            span.input-group-btn
+                input.filters-on(type= "checkbox", group= "data")
+    div.col-md-6.col-sm-6.col-xs-12
+        label.col-md-3.control-label(for= "limit")= "Limit"
+        div.col-md-9.input-group
+            input#limit.col-md-5.form-control(type= "number",value="10", min= "1", autocomplete= "off")
+    div.col-md-6.col-sm-6.col-xs-12
+        label.col-md-3.control-label(for= "actions")= "Actions"
+        div#actions.col-md-9.input-group
+            button.json-btn.btn.btn-default(type= "button", chart-group= "0")= "JSON Charts 1"
+                a
+            button.json-btn.btn.btn-default(type= "button", chart-group= "1")= "JSON Charts 2"
+                a       
+            button#submit-sum-btn.btn.btn-success.pull-right(type= "button")= "Submit"
+            button#reset-sum-btn.btn.btn-default.pull-right(type= "button")= "Reset"
+hr

@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var routesSumCurrent = require('./routes/br-sum-current');
-var routesSumFilter = require('./routes/br-sum-filter');
 var app = express();
 
 // view engine setup
@@ -23,7 +22,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/br-sum-current', routesSumCurrent);
-app.use('/br-sum-filter', routesSumFilter);
 
 // setup JS+CSS dependencies
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); // redirect bootstrap JS
@@ -35,12 +33,13 @@ app.use('/js', express.static(__dirname + '/public/javascripts/'));
 app.use('/js', express.static(__dirname + '/node_modules/daterangepicker'));
 app.use('/js', express.static(__dirname + '/node_modules/moment'));
 app.use('/js', express.static(__dirname + '/node_modules/underscore'));
-app.use('/js', express.static(__dirname + '/node_modules/webhdfs/lib'));
 app.use('/js', express.static(__dirname + '/node_modules/bootstrap-select/dist/js'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap-switch/dist/js'));
 
 app.use('/css', express.static(__dirname + '/public/stylesheets/'));
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));// redirect CSS bootstrap
 app.use('/css', express.static(__dirname + '/node_modules/bootstrap-select/dist/css'));
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap-switch/dist/css/bootstrap3'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
